@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeMenuFragment">
+
+    <fragment
+        android:id="@+id/HomeMenuFragment"
+        android:name="com.example.mysocialmedia.fragments.homemenufragment.HomeMenuFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home_menu">
+
+        <action
+            android:id="@+id/action_HomeMenu_to_PostsFragment"
+            app:destination="@id/PostsFragment" />
+
+        <action
+            android:id="@+id/action_HomeMenuFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+
+        <action
+            android:id="@+id/action_HomeMenuFragment_to_todosFragment"
+            app:destination="@id/todosFragment" />
+        <action
+            android:id="@+id/action_HomeMenuFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PostsFragment"
+        android:name="com.example.mysocialmedia.fragments.postsfragments.PostsFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_posts">
+
+        <action
+            android:id="@+id/action_PostsFragment_to_HomeMenu"
+            app:destination="@id/HomeMenuFragment" />
+        <action
+            android:id="@+id/action_PostsFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.example.mysocialmedia.fragments.albumsfragment.AlbumsFragment"
+        android:label="@string/albums_fragment"
+        tools:layout="@layout/fragment_albums">
+
+        <action
+            android:id="@+id/action_albumsFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+        <action
+            android:id="@+id/action_albumsFragment_to_HomeMenuFragment"
+            app:destination="@id/HomeMenuFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.mysocialmedia.fragments.photosfragment.PhotosFragment"
+        android:label="@string/photos_fragment"
+        tools:layout="@layout/fragment_photos" >
+        <action
+            android:id="@+id/action_photosFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+        <action
+            android:id="@+id/action_photosFragment_to_fullPicFragment"
+            app:destination="@id/fullPicFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.example.mysocialmedia.fragments.commenstfragment.CommentsFragment"
+        android:label="@string/comments_fragment"
+        tools:layout="@layout/fragment_comments" >
+        <action
+            android:id="@+id/action_commentsFragment_to_PostsFragment"
+            app:destination="@id/PostsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todosFragment"
+        android:name="com.example.mysocialmedia.fragments.todos.TodosFragment"
+        android:label="Todos"
+        tools:layout="@layout/fragment_todos">
+        <action
+            android:id="@+id/action_todosFragment_to_HomeMenuFragment"
+            app:destination="@id/HomeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.mysocialmedia.fragments.userprofile.UserProfileFragment"
+        android:label="User Profile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_HomeMenuFragment"
+            app:destination="@id/HomeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullPicFragment"
+        android:name="com.example.mysocialmedia.fragments.fullpic.FullPicFragment"
+        tools:layout="@layout/fragment_full_pic"
+        android:label="Full Pic">
+
+        <action
+            android:id="@+id/action_fullPicFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+</navigation>

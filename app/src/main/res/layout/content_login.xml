@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        
+        <variable
+            name="loginViewModel"
+            type="com.example.mysocialmedia.activities.loginactivity.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="Login"
+            android:textSize="25dp"
+            android:textAllCaps="true"
+            android:id="@+id/text_view_head_line"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:id="@+id/input_layout_email"
+            android:layout_marginBottom="8dp"
+            android:hint="Email Id"
+            android:layout_below="@id/text_view_head_line">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_text_email_id"
+                android:text="@={loginViewModel.email}"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:id="@+id/input_layout_password"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/input_layout_email"
+            android:hint="Password">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_text_password"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_below="@id/input_layout_password"
+            android:text="Login"
+            android:onClick="@{() -> loginViewModel.login()}"
+            android:textAllCaps="true"/>
+    </RelativeLayout>
+</layout>

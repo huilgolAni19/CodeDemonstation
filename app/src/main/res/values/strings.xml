@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MySocialMedia</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Home</string>
+    <string name="second_fragment_label">Posts</string>
+    <string name="comments_fragment">Comments</string>
+    <string name="albums_fragment">Albums</string>
+    <string name="photos_fragment">Photos</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+
+
+</resources>

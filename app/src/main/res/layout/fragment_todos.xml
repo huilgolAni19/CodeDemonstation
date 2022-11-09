@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="todosViewModel"
+            type="com.example.mysocialmedia.fragments.todos.TodosViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.todos.TodosFragment">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:weightSum="3"
+            android:id="@+id/radio_group_filter"
+            android:onCheckedChanged="@{() -> todosViewModel.onChanged()}"
+            android:checkedButton="@={todosViewModel.todoFilter}">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="All"
+                android:id="@+id/radio_all"
+                android:checked="true"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:id="@+id/radio_completed"
+                android:text="Completed" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1"
+                android:id="@+id/radio_not_completed"
+                android:text="Not Completed" />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:id="@+id/recycle_view_todos"
+            android:layout_below="@id/radio_group_filter" />
+
+
+    </RelativeLayout>
+</layout>
