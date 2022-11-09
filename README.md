@@ -1,6 +1,6 @@
 # Example For Code Demonstration
 
-**Login Cred:**
+**Login Credentials**
 
 **Email : Sincere@april.biz** 
 
