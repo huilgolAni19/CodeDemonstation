@@ -11,9 +11,9 @@ Concepte Implimented:
 - Dagger2 Dependency Injection
 - Graph navigation 
 - Retrofit
-- Multi Modlule Dependency Injection
+- Multi Module Dependency Injection
 - MVVM Architecture ( Repository Pattern )
 - LiveData
 - SharedFlow
 - DataBinding
-- Couroutines
+- Coroutines
